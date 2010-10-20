@@ -31,4 +31,4 @@ How it works:
 
 Uses ChunkyPNG to write out a PNG file directly, in pure ruby. Since the files are small enough and it's development only, it shouldn't be an issue.
 
-I try to make the resulting images look pretty - the size of the ribbon is dictated by the Golden Ratio (hence the name), there's a shadow on the far right portions of the image, and there's also some alpha blending to antialias the diagonal line.
+I try to make the resulting images look pretty - the size of the ribbon is dictated by the Golden Ratio (hence the name), there's a shadow on the far right portions of the image, and there's also some alpha blending to antialias the diagonal line. For any sort of heavy-duty lifting, you'll probably want to call your designer or something though.

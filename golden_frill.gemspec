@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Alexander Bartlow"]
   s.email       = ["bartlowa@gmail.com"]
-  s.homepage    = "http://rubygems.org/gems/golden_frill"
+  s.homepage    = "http://github.com/alexbartlow/rack-golden_frill"
   s.summary     = "Simple Rack-based frils for your website"
   s.description = "Generates on-demand 'ribbony' links that protrude to the left or right of active links"
 
