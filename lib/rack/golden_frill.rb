@@ -7,7 +7,7 @@ module Rack
     end
 
     def call env
-      unless env["PATH_INFO"] =~ /images\/frill_/
+      if env["PATH_INFO"] !~ /images\/frill_/ || env["RAILS_ENV"] == 'production' || env["RACK_ENV"] == 'production'
         return @app.call(env)
       end
 
