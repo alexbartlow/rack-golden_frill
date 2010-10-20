@@ -6,14 +6,13 @@ module Rack
       raise ArgumentError, "#{output_path} is not a directory" unless ::File.directory?(@root)
     end
 
-    def call env      
-      unless env["PATH_INFO"] =~ /#{@root}/
+    def call env
+      unless env["PATH_INFO"] =~ /images\/frill_/
         return @app.call(env)
       end
 
+      command = env["PATH_INFO"].match(/\/frill_(.*)\.png/i)[1]
       request = ::Rack::Request.new(env)
-      command = env["PATH_INFO"].match(/#{@root}\/frill_(.*)\.png/i)[1]
-      
       image_path = ::File.join(@root,"frill_#{command}.png")
       if ::File.exist?(image_path)
         return ::Rack::File.new(@root).call(env)
@@ -21,10 +20,9 @@ module Rack
       
       opts = { :output_path => image_path }
       opts[:base_color], opts[:width], opts[:height], opts[:frill_color] = command.split('.')
-      ::GoldenFrill.new(opts).run!
-
+      ::GoldenFrill.run!(opts)
       # Redirect to this URL since it will now be served.
-      return [301, {'Location' => request.url}, 'Redirecting to created image.']
+      return [301, {'Location' => request.url}, ['Redirecting to created image.']]
     end
   end
 end

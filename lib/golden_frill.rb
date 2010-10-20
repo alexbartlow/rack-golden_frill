@@ -10,7 +10,7 @@ module GoldenFrill
   # Optional:
   #  frill_color: the color of the frill. If not provided, will be a darker color than the base
   def self.run!(opts)
-    width, height, base_color, output_path = opts[:width], opts[:height], opts[:base_color], opts[:output_path]
+    width, height, base_color, output_path = opts[:width].to_i, opts[:height].to_i, opts[:base_color], opts[:output_path]
     
     bot_height = height.to_i + (width.to_f * GoldenRatio).to_i
     png = ChunkyPNG::Image.new(width.to_i, bot_height)
