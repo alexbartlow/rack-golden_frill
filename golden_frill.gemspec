@@ -2,7 +2,7 @@
 require File.expand_path("../lib/golden_frill/version", __FILE__)
 
 Gem::Specification.new do |s|
-  s.name        = "golden_frill"
+  s.name        = "rack-golden_frill"
   s.version     = GoldenFrill::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Alexander Bartlow"]
@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.description = "Generates on-demand 'ribbony' links that protrude to the left or right of active links"
 
   s.required_rubygems_version = ">= 1.3.6"
-  s.rubyforge_project         = "golden_frill"
+  s.rubyforge_project         = "rack-golden_frill"
 
   s.add_dependency "chunky_png", ">= 0.10.4"
   s.add_dependency "rack", ">= 1.0"
