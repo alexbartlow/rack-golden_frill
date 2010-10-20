@@ -1,0 +1,23 @@
+PATH
+  remote: .
+  specs:
+    golden_frill (0.1.0)
+      chunky_png (>= 0.10.4)
+      rack (>= 1.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    chunky_png (0.10.4)
+    rack (1.2.1)
+    test-unit (2.1.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (>= 1.0.0)
+  chunky_png (>= 0.10.4)
+  golden_frill!
+  rack (>= 1.0)
+  test-unit
